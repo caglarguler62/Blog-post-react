@@ -3,11 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+const blogPost = {
+  title: 'My first post',
+  published: true
+}
+let isPublished;
+if(blogPost.published){
+  isPublished = 'green'
+} else {
+  isPublished = 'red'
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+const element = <h1 className={isPublished}>{blogPost.title}</h1>
+ReactDOM.render(   
+  element,       
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 
